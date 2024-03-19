@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/registration}" th:object="${person}">
+    <label for="firstName">Enter your real name</label>
+    <input type="text" th:field="*{firstName}" id="firstName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Incorrect name</div>
+    <br>
+
+    <label for="lastName">Enter your real name</label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Incorrect Last name</div>
+    <br>
+
+    <label for="age">Enter your real name</label>
+    <input type="number" th:field="*{age}" id="age"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Incorrect age</div>
+    <br>
+
+    <label for="username">Enter username: </label>
+    <input type="text" th:field="*{username}" id="username"/>
+    <div style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</div>
+    <br>
+    <label for="password">enter password</label>
+    <input type="password" th:field="*{password}" id="password">
+    <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Incorrect password</div>
+    <br>
+    <input type="submit" value="Sign up!">
+
+</form>
+</body>
+</html>
